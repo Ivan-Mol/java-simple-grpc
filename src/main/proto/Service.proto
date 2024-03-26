@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.numbers;
+
+message NumbersRequest {
+  int32 firstValue = 1;
+  int32 lastValue = 2;
+}
+
+message NumbersResponse {
+  int32 number = 1;
+}
+
+service NumbersService {
+  rpc GenerateNumbersStream(NumbersRequest) returns (stream NumbersResponse);
+}
